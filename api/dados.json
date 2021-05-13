@@ -1,0 +1,17 @@
+{ "campeonato": [ {"nome": "Brasileirão Série A", "local": "https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1"}, 
+                 {"nome": "Premier League", "local": "https://www.transfermarkt.com.br/premier-league/startseite/wettbewerb/GB1"},
+                {"nome": "LaLiga", "local": "https://www.transfermarkt.com.br/la-liga/startseite/wettbewerb/ES1"},
+                {"nome": "Ligue 1", "local": "https://www.transfermarkt.com.br/ligue-1/startseite/wettbewerb/FR1"},
+                {"nome": "Serie A", "local": "https://www.transfermarkt.com.br/serie-a/startseite/wettbewerb/IT1"},
+                {"nome": "Bundesliga", "local": "https://www.transfermarkt.com.br/1-bundesliga/startseite/wettbewerb/L1"}]
+                    
+    
+
+
+
+
+}
+
+
+
+
