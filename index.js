@@ -186,7 +186,10 @@ app.use("/topclubes", function (req, res) {
 })
 
 
-
+app.use("/autor", function(req, res){
+    const dados = require("./api/info.json")
+    res.send(dados)
+})
 
 
 app.listen(porta, function () {
