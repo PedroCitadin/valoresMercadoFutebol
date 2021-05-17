@@ -1,36 +1,58 @@
-{ "campeonato": [ {"nome": "Brasileirão Série A", "local": "https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1"}, 
-                 {"nome": "Premier League", "local": "https://www.transfermarkt.com.br/premier-league/marktwerte/wettbewerb/GB1"},
-                {"nome": "LaLiga", "local": "https://www.transfermarkt.com.br/la-liga/marktwerte/wettbewerb/ES1"},
-                {"nome": "Ligue 1", "local": "https://www.transfermarkt.com.br/ligue-1/marktwerte/wettbewerb/FR1"},
-                {"nome": "Serie A", "local": "https://www.transfermarkt.com.br/serie-a/marktwerte/wettbewerb/IT1"},
-                {"nome": "Bundesliga", "local": "https://www.transfermarkt.com.br/1-bundesliga/marktwerte/wettbewerb/L1"}],
-
-   "confederacoes": [
-        {"nome": "Geral", "local": "https://www.transfermarkt.com.br/spieler-statistik/wertvollstemannschaften/marktwertetop"},
-        {"nome": "AFC", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=1&yt0=Mostrar"},
-        {"nome": "CAF", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=2&yt0=Mostrar"},
-        {"nome": "CONCACAF", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=3&yt0=Mostrar"},
-        {"nome": "CONMEBOL", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=4&yt0=Mostrar"},
-        {"nome": "OFC", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=5&yt0=Mostrar"},
-        {"nome": "UEFA", "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=6&yt0=Mostrar"}
-
-
-
-
-
-
-
-   ]
-
-   
-                    
-    
-
-
-
-
+{
+    "campeonato": [
+        {
+            "nome": "Brasileirão Série A",
+            "local": "https://www.transfermarkt.com.br/campeonato-brasileiro-serie-a/marktwerte/wettbewerb/BRA1"
+        },
+        {
+            "nome": "Premier League",
+            "local": "https://www.transfermarkt.com.br/premier-league/marktwerte/wettbewerb/GB1"
+        },
+        {
+            "nome": "LaLiga",
+            "local": "https://www.transfermarkt.com.br/la-liga/marktwerte/wettbewerb/ES1"
+        },
+        {
+            "nome": "Ligue 1",
+            "local": "https://www.transfermarkt.com.br/ligue-1/marktwerte/wettbewerb/FR1"
+        },
+        {
+            "nome": "Serie A",
+            "local": "https://www.transfermarkt.com.br/serie-a/marktwerte/wettbewerb/IT1"
+        },
+        {
+            "nome": "Bundesliga",
+            "local": "https://www.transfermarkt.com.br/1-bundesliga/marktwerte/wettbewerb/L1"
+        }
+    ],
+    "confederacoes": [
+        {
+            "nome": "Geral",
+            "local": "https://www.transfermarkt.com.br/spieler-statistik/wertvollstemannschaften/marktwertetop"
+        },
+        {
+            "nome": "AFC",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=1&yt0=Mostrar"
+        },
+        {
+            "nome": "CAF",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=2&yt0=Mostrar"
+        },
+        {
+            "nome": "CONCACAF",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=3&yt0=Mostrar"
+        },
+        {
+            "nome": "CONMEBOL",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=4&yt0=Mostrar"
+        },
+        {
+            "nome": "OFC",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=5&yt0=Mostrar"
+        },
+        {
+            "nome": "UEFA",
+            "local": "https://www.transfermarkt.com.br/vereins-statistik/wertvollstemannschaften/marktwertetop/plus/0/galerie/0?land_id=0&kontinent_id=6&yt0=Mostrar"
+        }
+    ]
 }
-
-
-
-
