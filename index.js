@@ -7,11 +7,14 @@ const dados = require("./api/dados.json")
 
 
 
-app.use("/topvalores", function (req, res) {
+app.use("/topjogadores", function (req, res) {
     var jogadores = []
     const sq = (req.query).liga
     if (verificaFiltro(sq)) {
         const url = retornaURL(sq)
+        if(url == false){
+            res.send("Liga não encontrada!")
+        }else{
         var requisicao = axios.get(url)
         requisicao.then(function (resposta) {
             var root = parser(resposta.data)
@@ -36,10 +39,10 @@ app.use("/topvalores", function (req, res) {
                 }
                 jogadores.push(nomep)
             }
-    
-            res.send(jogadores) 
-         
-                      
+
+            res.send(jogadores)
+
+
 
 
 
@@ -52,7 +55,7 @@ app.use("/topvalores", function (req, res) {
 
         })
 
-
+    }
 
 
 
@@ -108,6 +111,82 @@ app.use("/topvalores", function (req, res) {
     }
 
 })
+app.use("/topclubes", function (req, res) {
+    var clubes = []
+    const sq = (req.query).confederacao
+    
+    if (verificaFiltro(sq)) {
+    const url = retornaURLFed(sq)
+    if(url == false){
+        res.send("Confederação não encontrada!")
+    }else{
+    var requisicao = axios.get(url)
+        requisicao.then(function (resposta) {
+            var root = parser(resposta.data)
+            var rt = root.querySelectorAll('.items')[0]['childNodes'][3]['childNodes']
+            var r2 = []
+            for (let i = 0; i < rt.length; i++) {
+                if (i % 2 == 0) {
+
+                } else {
+                    r2.push(rt[i])
+                }
+            }
+
+            for (let i = 0; i < r2.length; i++) {
+                var nomep = {
+                    nome: r2[i]['childNodes'][2]['childNodes'][0]['childNodes'][0]['_attrs']['alt'],
+                    pais: r2[i]['childNodes'][4]['childNodes'][0]['_attrs']['alt'],
+                    liga: r2[i]['childNodes'][4]['childNodes'][2]['_attrs']['title'],
+                    valor_mercado: r2[i]['childNodes'][5]['childNodes'][0]['childNodes'][0]['rawText'],
+                    url_imagem: r2[i]['childNodes'][2]['childNodes'][0]['childNodes'][0]['_attrs']['src']
+                   
+                }
+                clubes.push(nomep)
+            }
+           res.send(clubes)
+
+
+        })
+    }
+
+    } else {
+        const url = dados.confederacoes[0].local
+        var requisicao = axios.get(url)
+        requisicao.then(function (resposta) {
+            var root = parser(resposta.data)
+            var rt = root.querySelectorAll('.items')[0]['childNodes'][3]['childNodes']
+            var r2 = []
+            for (let i = 0; i < rt.length; i++) {
+                if (i % 2 == 0) {
+
+                } else {
+                    r2.push(rt[i])
+                }
+            }
+
+            for (let i = 0; i < r2.length; i++) {
+                var nomep = {
+                    nome: r2[i]['childNodes'][2]['childNodes'][0]['childNodes'][0]['_attrs']['alt'],
+                    pais: r2[i]['childNodes'][4]['childNodes'][0]['_attrs']['alt'],
+                    liga: r2[i]['childNodes'][4]['childNodes'][2]['_attrs']['title'],
+                    valor_mercado: r2[i]['childNodes'][5]['childNodes'][0]['childNodes'][0]['rawText'],
+                    url_imagem: r2[i]['childNodes'][2]['childNodes'][0]['childNodes'][0]['_attrs']['src']
+                   
+                }
+                clubes.push(nomep)
+            }
+           res.send(clubes)
+
+
+        })
+    }
+
+
+})
+
+
+
 
 
 app.listen(porta, function () {
@@ -126,18 +205,29 @@ function verificaFiltro(qs) {
 
 }
 
-function retornaURL(qs){
-    if(qs=="brasileirao"){
+function retornaURL(qs) {
+    if (qs.toUpperCase() == "brasileirao".toUpperCase()) {
         return dados.campeonato[0].local
-    }else if(qs=="premierleague"){
+    } else if (qs.toUpperCase() == "premierleague".toUpperCase()) {
         return dados.campeonato[1].local
-    }else if(qs=="laliga"){
+    } else if (qs.toUpperCase() == "laliga".toUpperCase()) {
         return dados.campeonato[2].local
-    }else if(qs=="ligue1"){
+    } else if (qs.toUpperCase()== "ligue1".toUpperCase()) {
         return dados.campeonato[3].local
-    }else if(qs=="seriea"){
+    } else if (qs.toUpperCase() == "seriea".toUpperCase()) {
         return dados.campeonato[4].local
-    }else if(qs=="bundesliga"){
+    } else if (qs.toUpperCase() == "bundesliga".toUpperCase()) {
         return dados.campeonato[5].local
+    }else{
+        return false
     }
+}
+
+function retornaURLFed(qs){
+    for(let i = 0; i<dados.confederacoes.length; i++){
+        if(qs.toUpperCase()==dados.confederacoes[i].nome.toUpperCase()){
+            return dados.confederacoes[i].local 
+        }
+    }
+    return false
 }
